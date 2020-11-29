@@ -13,5 +13,7 @@ echo $SCRIPTPATH
 
 sudo unlink ~/.bashrc
 ln -sv $SCRIPTPATH/.bashrc ~
+sudo unlink ~/.vimrc
+ln -sv $SCRIPTPATH/.vimrc ~
 
 source ~/.bashrc
