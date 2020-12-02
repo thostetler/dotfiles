@@ -3,6 +3,12 @@
 # install git-bash-prompt
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
+# install doppler
+(curl -Ls https://cli.doppler.com/install.sh || wget -qO- https://cli.doppler.com/install.sh) | sh
+
+# install hub
+apt update && apt install hub -y
+
 echo WORKING DIR
 pwd
 
