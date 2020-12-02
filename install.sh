@@ -6,12 +6,14 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 # install doppler
 (curl -Ls https://cli.doppler.com/install.sh || wget -qO- https://cli.doppler.com/install.sh) | sh
 
+# install git aliases
+curl -O https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt ~/.gitalias.txt
+git config --global include.path ~/.gitalias.txt
+
 # install hub
 apt update && apt install hub -y
 
-echo WORKING DIR
-pwd
-
+# final linking of config files
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 echo SCRIPT PATH
