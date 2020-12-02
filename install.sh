@@ -10,8 +10,8 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 curl -o ~/.gitalias.txt https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
 git config --global include.path ~/.gitalias.txt
 
-# install hub
-apt update && apt install hub -y
+# install deps
+apt update && apt install hub vim -y
 
 # final linking of config files
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
