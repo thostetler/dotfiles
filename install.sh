@@ -7,7 +7,7 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 (curl -Ls https://cli.doppler.com/install.sh || wget -qO- https://cli.doppler.com/install.sh) | sh
 
 # install git aliases
-curl -O https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt ~/.gitalias.txt
+curl -o ~/.gitalias.txt https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
 git config --global include.path ~/.gitalias.txt
 
 # install hub
