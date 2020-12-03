@@ -12,3 +12,6 @@ source ~/.git-completion.bash
 
 # alias git as hub
 eval "$(hub alias -s)"
+
+# environment
+export DOPPLER_TOKEN=
