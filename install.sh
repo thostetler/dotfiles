@@ -8,13 +8,16 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 
 # install git aliases
 curl -o ~/.gitalias.txt https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
-git config --global include.path ~/.gitalias.txt
 
 # install git completion
 curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
-# switch git editor to vim
+# git settings
+git config --global user.email "6970899+thostetler@users.noreply.github.com"
+git config --global user.name "Tim Hostetler"
+git config --global user.username "thostetler"
 git config --global core.editor vim
+git config --global include.path ~/.gitalias.txt
 
 # install deps
 apt update && apt install hub vim -y

@@ -10,8 +10,9 @@ fi
 # git completion
 source ~/.git-completion.bash
 
-# alias git as hub
+# aliases
 eval "$(hub alias -s)"
+alias y='yarn'
 
 # environment
 export DOPPLER_TOKEN=
