@@ -7,4 +7,8 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     source $HOME/.bash-git-prompt/gitprompt.sh
 fi
 
-alias git=hub
+# git completion
+source ~/.git-completion.bash
+
+# alias git as hub
+eval "$(hub alias -s)"

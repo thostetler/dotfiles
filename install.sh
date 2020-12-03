@@ -10,6 +10,12 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 curl -o ~/.gitalias.txt https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
 git config --global include.path ~/.gitalias.txt
 
+# install git completion
+curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+
+# switch git editor to vim
+git config --global core.editor vim
+
 # install deps
 apt update && apt install hub vim -y
 
