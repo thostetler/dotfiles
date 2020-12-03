@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # install git-bash-prompt
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
@@ -25,9 +25,13 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 echo SCRIPT PATH
 echo $SCRIPTPATH
 
-sudo unlink ~/.bashrc
-ln -sv $SCRIPTPATH/.bashrc ~
-sudo unlink ~/.vimrc
-ln -sv $SCRIPTPATH/.vimrc ~
+# remove old dotfiles
+sudo rm -rf ~/.vim > /dev/null 2>&1
+sudo rm -rf ~/.vimrc > /dev/null 2>&1
+sudo rm -rf ~/.bashrc > /dev/null 2>&1
+
+# add links
+ln -sv $SCRIPTPATH/bashrc ~/.bashrc
+ln -sv $SCRIPTPATH/vimrc ~/.vimrc
 
 source ~/.bashrc
