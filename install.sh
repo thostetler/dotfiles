@@ -12,6 +12,10 @@ curl -o ~/.gitalias.txt https://raw.githubusercontent.com/GitAlias/gitalias/mast
 # install git completion
 curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
+# instal vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # git settings
 git config --global user.email "6970899+thostetler@users.noreply.github.com"
 git config --global user.name "Tim Hostetler"
