@@ -12,9 +12,12 @@ curl -o ~/.gitalias.txt https://raw.githubusercontent.com/GitAlias/gitalias/mast
 # install git completion
 curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
-# instal vim-plug
+# install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install vim plugins
+vim -c ':PlugInstall | quit | quit'
 
 # git settings
 git config --global user.email "6970899+thostetler@users.noreply.github.com"
@@ -38,7 +41,7 @@ sudo rm -rf ~/.vimrc > /dev/null 2>&1
 sudo rm -rf ~/.bashrc > /dev/null 2>&1
 
 # add links
-ln -sv $SCRIPTPATH/bashrc ~/.bashrc
-ln -sv $SCRIPTPATH/vimrc ~/.vimrc
+ln -snf $SCRIPTPATH/bashrc ~/.bashrc
+ln -snf $SCRIPTPATH/vimrc ~/.vimrc
 
 source ~/.bashrc

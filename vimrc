@@ -4,9 +4,6 @@ filetype off     " required
 " Keep Plug commands between plug#begin() and plug#end().
 call plug#begin()
 
-Plug 'janko/vim-test'             " Run Ruby and Elixir tests
-Plug 'nikolalsvk/vim-rails'       " Rails plugin
-
 Plug 'airblade/vim-gitgutter'     " Show git diff of lines edited
 Plug 'tpope/vim-fugitive'         " :Gblame
 
@@ -25,6 +22,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'ajmwagar/vim-deus'
 
 " All of your Plugins must be added before the following line
 call plug#end()              " required
@@ -64,6 +63,9 @@ set smartindent
 " Enable folding
 set foldmethod=syntax
 set foldlevel=99
+
+" Set the finder glob
+set path=+**
 
 " Enable folding with the z key
 nmap z za
@@ -181,3 +183,4 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 let g:fugitive_pty = 0
+
