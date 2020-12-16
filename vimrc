@@ -184,3 +184,5 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 
 let g:fugitive_pty = 0
 
+" add mouse support for all modes
+set mouse=a
