@@ -1,0 +1,3 @@
+alias vim=lvim
+alias y=yarn
+alias ls=exa

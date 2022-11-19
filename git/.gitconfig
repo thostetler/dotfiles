@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+	email = 6970899+thostetler@users.noreply.github.com
+	name = Tim Hostetler
+	username = thostetler
+[core]
+	editor = lvim
+[include]
+	path = /home/tim/.gitalias.txt

@@ -1,17 +1,10 @@
 #!/bin/bash
 
 # install git aliases
-curl -o ~/.gitalias.txt https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
+curl -o ~/.config/gitalias.txt https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
 
 # install git completion
-curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-
-# git settings
-git config --global user.email "6970899+thostetler@users.noreply.github.com"
-git config --global user.name "Tim Hostetler"
-git config --global user.username "thostetler"
-git config --global core.editor vim
-git config --global include.path ~/.gitalias.txt
+curl -o ~/.config/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
 # install volta
 curl https://get.volta.sh | bash
@@ -38,19 +31,5 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
   sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 
 # install deps
-apt update && apt install -y signal-desktop
+apt update && apt install -y signal-desktop gh exa
 
-# final linking of config files
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-
-echo SCRIPT PATH
-echo $SCRIPTPATH
-
-# remove old dotfiles
-sudo rm -rf ~/.bashrc > /dev/null 2>&1
-
-# add links
-ln -snf $SCRIPTPATH/bashrc ~/.bashrc
-ln -snf $SCRIPTPATH/vimrc ~/.vimrc
-
-source ~/.bashrc
