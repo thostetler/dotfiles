@@ -7,6 +7,17 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     source $HOME/.bash-git-prompt/gitprompt.sh
 fi
 
+# variables
+if [ -f ~/.bash_vars ]; then
+    . ~/.bash_vars
+fi
+
+# include bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+
 # git completion
 source ~/.git-completion.bash
 
@@ -14,5 +25,6 @@ source ~/.git-completion.bash
 eval "$(hub alias -s)"
 alias y='yarn'
 
-# environment
-export DOPPLER_TOKEN=
+# volta stuff
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
