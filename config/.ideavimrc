@@ -1,0 +1,70 @@
+set number
+set visualbell
+set highlightedyank
+set ideamarks
+set ideajoin
+set commentary
+set repeat
+set argtextobj
+set textobj-entire
+set vim-paragraph-motion
+set textobj-indent
+set exchange
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+set quickscope
+Plug 'easymotion/vim-easymotion'
+set easymotion
+map <Leader> <Plug>(easymotion-prefix)
+" Press `f` to activate AceJump
+map f <Action>(AceAction)
+" Press `F` to activate Target Mode
+map F <Action>(AceTargetAction)
+" Press `g` to activate Line Mode
+"map g <Action>(AceLineAction)
+
+" Replace text
+sethandler <C-h> n:ide
+" Block visual mode
+sethandler <C-v> i:ide
+
+let mapleader = " "
+
+map <Leader>r :action RenameElement<CR>
+map <Leader>i <Action>(GotoImplementation)
+map <Leader>e <Action>(ShowErrorDescription)
+map <Leader>f <Action>(FindUsages)
+map <Leader>F <Action>(HighlightUsagesInFile)
+map <Leader>w <Action>(SaveAll)
+map <Leader>R <Action>(Refactorings.QuickListPopupAction)
+map <Leader>a <Action>(AnalyzeActionsPopup)
+map <BS> <Action>(GotoRelated)
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+map g; <Action>(JumpToLastChange)
+map g, <Action>(JumpToNextChange)
+map <Leader>pi <Action>(ParameterInfo)
+nmap <Leader>s <Action>(FileStructurePopup)
+noremap g/ <ESC>:action FindInPath<CR>
+noremap g' <ESC>:action ReplaceInPath<CR>
+noremap / <ESC>:action Find<CR>
+noremap [[ <ESC>:action MethodUp<CR>
+noremap ]] <ESC>:action MethodDown<CR>
+noremap <leader>j <ESC>:action GotoNextError<CR>
+noremap <leader>k <ESC>:action GotoPreviousError<CR>
+map <Leader>[ <Action>(EditorCodeBlockStart)
+map <Leader>] <Action>(EditorCodeBlockEnd)
+vmap t <Action>(EditorSelectWord)
+vmap T <Action>(EditorUnSelectWord)
+map <Leader>va <Action>(SelectAllOccurrences)
+map <Leader>sw <Action>(SurroundWith)
+
+" don't yank pasted over lines
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
