@@ -4,8 +4,14 @@
 	name = Tim Hostetler
 	username = thostetler
 [core]
-	editor = lvim
+	editor = vim
 [include]
 	path = /home/tim/.gitalias.txt
 [alias]
   lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/tim/.local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/tim/.local/bin/gh auth git-credential
